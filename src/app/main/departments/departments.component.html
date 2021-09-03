@@ -1,0 +1,40 @@
+<section id="departments" class="departments">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Departments</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+                consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
+                fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <ul class="nav nav-tabs flex-column">
+                    <li class="nav-item" *ngFor="let department of this.medilabSrv.departments; let i = index">
+                        <a class="nav-link" [class.active]="i === 0" data-bs-toggle="tab" href="#tab-{{i}}">
+                            {{department.departmentName}}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-9 mt-4 mt-lg-0">
+                <div class="tab-content">
+                    <div class="tab-pane" [class.active]="i === 0" id="tab-{{i}}"
+                        *ngFor="let department of this.medilabSrv.departments; let i = index">
+                        <div class="row">
+                            <div class="col-lg-8 details order-2 order-lg-1">
+                                <h3>{{department.brief}}</h3>
+                                <p class="fst-italic">{{department.title}}</p>
+                                <p>{{department.description}}</p>
+                            </div>
+                            <div class="col-lg-4 text-center order-1 order-lg-2">
+                                <img src="{{department.imagePath}}" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

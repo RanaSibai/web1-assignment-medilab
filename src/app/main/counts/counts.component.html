@@ -1,0 +1,15 @@
+<section id="counts" class="counts">
+    <div class="container">
+
+        <div class="row">
+
+            <div *ngFor="let count of this.medilabSrv.counts" class="{{count.Class}}">
+                <div class="count-box">
+                    <i class="{{count.Icon}}"></i>
+                    <span>{{count.dataCounterEnd}}</span>
+                    <p>{{count.countName}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
